@@ -2,7 +2,7 @@
 
 This repository showcases a Todo app built using Flutter, Bloc/Cubit for state management, Dio for HTTP requests, and GetIt for dependency injection.
 
-<img src="https://github.com/bartomiak/flutter-todo/assets/19801250/4c3411b0-85a8-4edd-ba95-0cbf0e29f7b8" width="400">
+<img src="https://github.com/bartomiak/flutter-todo/assets/19801250/0fad89e0-b476-4f9f-8c35-a7bcb2103de3" width="400">
 
 ### Features
 

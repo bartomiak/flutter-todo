@@ -5,12 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todo_app/bloc/todo_cubit/todo_state.dart';
 import 'package:flutter_todo_app/models/todo.dart';
 import 'package:flutter_todo_app/repository/todo_repository.dart';
+import 'package:flutter_todo_app/service_locator.dart';
 
 class TodoCubit extends Cubit<TodoState> {
   final TodoRepository _repository;
 
   TodoCubit({required TodoRepository repository})
-      : _repository = repository,
+      : _repository = serviceLocator<TodoRepository>(),
         super(InitialState());
 
   // Fetch todos

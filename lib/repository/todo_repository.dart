@@ -1,13 +1,14 @@
 // Import the necessary packages
 import 'package:flutter_todo_app/api/app_rest_client.dart';
 import 'package:flutter_todo_app/models/todo.dart';
+import 'package:flutter_todo_app/service_locator.dart';
 
 class TodoRepository {
   final AppRestClient _client;
 
-  // TODO: add getIt
   // Constructor: We're injecting our Dio API client here
-  TodoRepository({required AppRestClient client}) : _client = client;
+  TodoRepository({required AppRestClient client})
+      : _client = serviceLocator<AppRestClient>();
 
   // READ: Fetch all todos
   Future<List<Todo>> getTodos() async {

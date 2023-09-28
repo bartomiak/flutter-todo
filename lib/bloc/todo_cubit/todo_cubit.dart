@@ -21,9 +21,11 @@ class TodoCubit extends Cubit<TodoState> {
     Timer(const Duration(milliseconds: 500), () async {
       try {
         List<Todo> todos = await _repository.getTodos();
-        emit(TodosLoadedState(todos));
+        // Checking if we have todos, if so update only datetime, if not get todos and lastUpdated value
+        emit(state is TodosLoadedState
+            ? (state as TodosLoadedState).copyWith(lastUpdated: DateTime.now())
+            : TodosLoadedState(todos, lastUpdated: DateTime.now()));
       } catch (e) {
-        // Handle error or emit error state
         emit(TodosErrorState(e.toString()));
       }
     });

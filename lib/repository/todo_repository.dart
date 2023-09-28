@@ -15,7 +15,6 @@ class TodoRepository {
     try {
       final response = await _client.getTodos();
       final List<dynamic> rawData = response.data;
-      print('$rawData');
       return rawData.map((e) => Todo.fromJson(e)).toList();
     } catch (e) {
       rethrow;
